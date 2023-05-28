@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";

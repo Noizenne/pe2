@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { useEffect } from "react";
 import useApi from "../../hooks/useAPI";

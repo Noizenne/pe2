@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@mui/material";

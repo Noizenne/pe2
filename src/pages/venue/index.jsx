@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect } from "react";
 import { API_venues } from "../../api/constants/url";
 import useApi from "../../hooks/useAPI";
