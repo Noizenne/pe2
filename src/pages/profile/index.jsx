@@ -128,9 +128,9 @@ function ProfilePage() {
       <div className="container">
         <div className="profileInfo">
           {!avatar ? (
-            <img className="profileImg" src="/placeholder.jpg" alt="Profile image"></img>
+            <img className="profileImg" src="/placeholder.jpg" alt="Profile icon"></img>
           ) : (
-            <img className="profileImg" src={avatar.avatar} alt="Profile image"></img>
+            <img className="profileImg" src={avatar.avatar} alt="Profile icon"></img>
           )}
           <Button onClick={handleOpenAvatar}>Edit avatar</Button>
           <Modal
