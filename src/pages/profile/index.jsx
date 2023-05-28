@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import { useEffect } from "react";
 import useApi from "../../hooks/useAPI";
@@ -19,6 +18,7 @@ import AddVenue from "../../components/AddVenue";
 import EditAvatar from "../../components/EditAvatar";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/Error/Error";
+import Back from "../../components/Back";
 
 function ProfilePage() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -124,15 +124,25 @@ function ProfilePage() {
   }
   return (
     <StyledProfile>
-      <div>Back</div>
+      <Back />
       <div className="container">
         <div className="profileInfo">
           {!avatar ? (
-            <img className="profileImg" src="/placeholder.jpg" alt="Profile icon"></img>
+            <img
+              className="profileImg"
+              src="/placeholder.jpg"
+              alt="Profile icon"
+            ></img>
           ) : (
-            <img className="profileImg" src={avatar.avatar} alt="Profile icon"></img>
+            <img
+              className="profileImg"
+              src={avatar.avatar}
+              alt="Profile icon"
+            ></img>
           )}
-          <Button onClick={handleOpenAvatar}>Edit avatar</Button>
+          <Button onClick={handleOpenAvatar} sx={{ color: "white", fontSize: 13 }}>
+            Edit avatar
+          </Button>
           <Modal
             open={openAvatar}
             onClose={handleCloseAvatar}
@@ -143,9 +153,11 @@ function ProfilePage() {
               <EditAvatar data={data} />
             </Box>
           </Modal>
-          <p>{data.name}</p>
-          {!venueManager ? "" : <p>VenueManager</p>}
-          <p>{data.email}</p>
+          <div className="myInfo">
+            <p>{data.name}</p>
+            {!venueManager ? "" : <p>VenueManager</p>}
+            <p>{data.email}</p>
+          </div>
         </div>
         <div>
           {venueManager ? (

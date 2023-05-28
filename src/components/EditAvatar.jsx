@@ -23,7 +23,7 @@ function EditAvatar({ data }) {
   return (
     <StyledForm>
       <form>
-        <label>Avatar URL:</label>
+        <label>Enter avatar url</label>
         <input
           type="url"
           id="avatarUrl"

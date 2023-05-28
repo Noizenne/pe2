@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import { useState, useEffect } from "react";
 import Calendar from "./Calendar";
@@ -27,8 +26,8 @@ function Booking({ venue }) {
   const bookVenue = async () => {
     setData(
       await PostData(`${API_URL}${API_bookings}`, {
-        dateFrom: startDate.toISOString(),
-        dateTo: endDate.toISOString(),
+        dateFrom: startDate,
+        dateTo: endDate,
         guests: numberOfGuests,
         venueId: venue.id,
       })
@@ -67,7 +66,6 @@ function Booking({ venue }) {
         <h3>${venue.price} per night</h3>
         <Calendar venueBookings={venue.bookings} getDateRange={getDateRange} />
       </div>
-
       <div className="bookingInfo">
         <div className="guests">
           <p>Guests: </p>

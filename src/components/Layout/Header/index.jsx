@@ -58,9 +58,9 @@ function AccountLoggedIn() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <Link to={`/profile/${userName}`}>
-          <MenuItem>Profile</MenuItem>
-        </Link>
+        <MenuItem component={Link} to={`/profile/${userName}`}>
+          Profile
+        </MenuItem>
 
         <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
       </Menu>
@@ -69,7 +69,6 @@ function AccountLoggedIn() {
 }
 
 function AccountMenu() {
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -183,14 +182,14 @@ function Header() {
     getVenues(API_URL + API_venues);
   }, []);
 
-  if(isLoading) {
-    return <Loader />
+  if (isLoading) {
+    return <Loader />;
   }
 
-  if(isError) {
-    return <ErrorMessage />
+  if (isError) {
+    return <ErrorMessage />;
   }
-  
+
   return (
     <header style={{ width: "70%", margin: "auto" }}>
       <StyledNav>

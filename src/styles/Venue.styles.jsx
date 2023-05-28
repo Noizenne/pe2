@@ -74,4 +74,10 @@ export const StyledVenue = styled.div`
       }
     }
   }
+
+  .about {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+  }
 `;

@@ -4,11 +4,17 @@ export const StyledProfile = styled.div`
   padding-top: 8rem;
   width: 70%;
   margin: auto;
+  @media (max-width: 768px) {
+    padding-top: 6rem;
+  }
   .container {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    padding-top: 1rem;
 
+    @media (max-width: 768px) {
+    flex-direction: column;
+  }
     .profileInfo {
       display: flex;
       flex-direction: column;
@@ -24,6 +30,10 @@ export const StyledProfile = styled.div`
         border: 1px solid ${({ theme }) => theme.colors.white};
         border-radius: 50%;
         margin: 10px;
+      }
+
+      .myInfo {
+        text-align: center;
       }
     }
     .bookings {
@@ -73,6 +83,7 @@ export const StyledProfile = styled.div`
           display: flex;
           list-style: none;
           margin: 10px;
+          width: 300px;
 
           a {
             text-decoration: none;

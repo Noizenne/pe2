@@ -14,6 +14,7 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 import Booking from "../../components/Booking";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/Error/Error";
+import Back from "../../components/Back";
 
 function VenuePage() {
   const { id } = useParams();
@@ -34,7 +35,7 @@ function VenuePage() {
   const { wifi, parking, breakfast, pets } = meta;
 
   useEffect(() => {
-    document.title = `Holidaze | ${name}`;
+    document.title = `Holidaze | ${data.name}`;
 
     if (isLoading) {
       return <Loader />;
@@ -45,25 +46,10 @@ function VenuePage() {
     }
   }, []);
 
-  /*  function Facilities() {
-    if (wifi === true) {
-      return <WifiIcon sx={{ width: 35, height: 30 }} />;
-    }
-    if (parking === true) {
-      return <TimeToLeaveIcon sx={{ width: 35, height: 30 }} />;
-    }
-    if (breakfast === true) {
-      return <BreakfastDiningIcon sx={{ width: 35, height: 30 }} />;
-    }
-    if (pets === true) {
-      return <PetsIcon sx={{ width: 35, height: 30 }} />;
-    }
-  } */
-
   return (
     <>
       <StyledVenue>
-        <div className="bc">Back</div>
+        <Back />
         <div className="container">
           <h1>{name}</h1>
           <div className="info">
