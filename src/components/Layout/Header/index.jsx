@@ -229,14 +229,12 @@ function Header() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                <div className="links">
-                  <MenuItem>
-                    <Link to="/">Home</Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to="/about">About</Link>
-                  </MenuItem>
-                </div>
+                <MenuItem component={Link} to={`/`}>
+                  Home
+                </MenuItem>
+                <MenuItem component={Link} to={`/about`}>
+                  About
+                </MenuItem>
               </Menu>
             </Box>
             <Box
@@ -245,10 +243,12 @@ function Header() {
                 display: { xs: "none", md: "flex", justifyContent: "right" },
               }}
             >
-              <div className="links">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-              </div>
+              <MenuItem component={Link} to={`/`}>
+                Home
+              </MenuItem>
+              <MenuItem component={Link} to={`/about`}>
+                About
+              </MenuItem>
             </Box>
             <Box sx={{ flexGrow: 0 }}>
               <div>{!token ? <AccountMenu /> : <AccountLoggedIn />}</div>

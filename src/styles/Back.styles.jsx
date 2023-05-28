@@ -10,4 +10,8 @@ export const StyledBack = styled.button`
     font-size: 16px;
     cursor: pointer;
     padding-top: 1rem;
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
 `

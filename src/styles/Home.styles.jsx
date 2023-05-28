@@ -121,5 +121,10 @@ export const StyledHome = styled.div`
       text-decoration: none;
       color: ${({ theme }) => theme.colors.black};
     }
+    @media (max-width: 825px) {
+    h2 {
+      text-align: center;
+    }
+  }
   }
 `;

@@ -10,7 +10,6 @@ function UsersBooking({ item }) {
 
   return (
     <li key={id}>
-      <div>
         <img
           src={media}
           alt={name}
@@ -19,7 +18,6 @@ function UsersBooking({ item }) {
             event.onError = null;
           }}
         />
-      </div>
       <div className="info">
         <div className="options">
           <Link to={`/venue/${id}`}>{name}</Link>

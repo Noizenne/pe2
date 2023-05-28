@@ -13,8 +13,8 @@ export const StyledProfile = styled.div`
     padding-top: 1rem;
 
     @media (max-width: 768px) {
-    flex-direction: column;
-  }
+      flex-direction: column;
+    }
     .profileInfo {
       display: flex;
       flex-direction: column;
@@ -37,6 +37,17 @@ export const StyledProfile = styled.div`
       }
     }
     .bookings {
+      ul {
+        display: flex;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+          display: flex;
+          flex-direction: column;
+        }
+      }
       .add {
         display: flex;
         justify-content: space-between;
@@ -75,16 +86,16 @@ export const StyledProfile = styled.div`
       }
       ul {
         display: flex;
-        padding: 0;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
 
         li {
           display: flex;
           list-style: none;
           margin: 10px;
           width: 300px;
-
+          height: 150px;
+          flex-direction: row;
           a {
             text-decoration: none;
             color: black;
@@ -92,6 +103,7 @@ export const StyledProfile = styled.div`
             font-weight: 600;
 
             .info {
+      
               .options {
                 display: flex;
                 justify-content: space-between;
@@ -100,12 +112,10 @@ export const StyledProfile = styled.div`
                   color: ${({ theme }) => theme.colors.primary};
                 }
               }
-
               .dates {
                 display: flex;
                 p {
                   font-size: 14px;
-                  margin: 5px;
                 }
               }
             }

@@ -5,4 +5,8 @@ export const StyledUl = styled.ul`
   padding: 0;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 825px) {
+    justify-content: center;
+  }
 `;
