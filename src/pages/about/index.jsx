@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { StyledVenue } from "../../styles/Venue.styles";
 import Back from "../../components/Back";
 
 function AboutPage() {
+
+  useEffect(() => {
+    document.title = `Holidaze | About`;
+  }, []);
   return (
     <StyledVenue>
       <Back />

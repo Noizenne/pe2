@@ -9,6 +9,7 @@ import Home from "./pages/home";
 import VenuePage from "./pages/venue";
 import ProfilePage from "./pages/profile";
 import AboutPage from "./pages/about";
+import NotFound from "./pages/not-found";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/venue/:id" element={<VenuePage />} />
           <Route path="/profile/:name" element={<ProfilePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path='*' element={<NotFound />}/>
         </Route>
       </Routes>
     </ThemeProvider>

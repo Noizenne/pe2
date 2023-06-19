@@ -6,8 +6,13 @@ import { Modal } from "@mui/material";
 import { Box } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditVenue from "./EditVenue";
+import DeleteData from "../api/DeleteData";
+import { API_URL, API_venues } from "../api/constants/url";
+import { useNavigate } from "react-router-dom";
 
 function OptionForVenue({ item }) {
+  const {id} = item;
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -39,6 +44,15 @@ function OptionForVenue({ item }) {
     borderRadius: 10,
   };
 
+  const navigate = useNavigate();
+
+  const onDelete = async () => {
+    const response = await DeleteData(`${API_URL}${API_venues}/` + id)
+    if(response.ok) {
+      navigate("/profile/");
+    }
+  }
+
   return (
     <>
       <Button
@@ -58,15 +72,7 @@ function OptionForVenue({ item }) {
         }}
       >
         <MenuItem onClick={handleOpenEdit}>Edit</MenuItem>
-        <MenuItem onClick={handleOpen}>Delete</MenuItem>
-        <Modal
-          open={openModal}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={modal}>Delete</Box>
-        </Modal>
+        <MenuItem onClick={onDelete}>Delete</MenuItem>
         <Modal
           open={openModalEdit}
           onClose={handleCloseModalEdit}

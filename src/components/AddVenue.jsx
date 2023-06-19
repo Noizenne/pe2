@@ -6,6 +6,7 @@ import { StyledForm } from "../styles/Form.styles";
 import PostData from "../api/PostData";
 import { API_URL } from "../api/constants/url";
 import { API_venues } from "../api/constants/url";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup
   .object()
@@ -41,6 +42,8 @@ const schema = yup
   .required();
 
 function AddVenue({ venues }) {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -79,8 +82,12 @@ function AddVenue({ venues }) {
           pets: data.pets,
         },
       };
-      await PostData(`${API_URL}${API_venues}`, newData);
+      
     }
+    const response = await PostData(`${API_URL}${API_venues}`, newData);
+    if(response.ok) {
+      navigate("/profile/");
+    } 
   };
   return (
     <StyledForm>
